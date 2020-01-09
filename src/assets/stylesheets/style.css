@@ -1,0 +1,5 @@
+/*GENERAL*/
+@import 'general/general.css';
+
+/*Components*/
+@import 'components/kill-monster.css';

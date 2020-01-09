@@ -1,0 +1,24 @@
+{
+    "name": "base-project",
+    "version": "1.0.0",
+    "description": "Base Project with gulp",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "author": "Andre Marques",
+    "license": "ISC",
+    "homepage": "",
+    "devDependencies": {
+        "autoprefixer": "^9.5.1",
+        "browser-sync": "^2.26.5",
+        "cssnano": "^4.1.10",
+        "gulp": "^4.0.2",
+        "gulp-postcss": "^8.0.0",
+        "gulp-pug": "^4.0.1",
+        "precss": "^4.0.0"
+    }
+}

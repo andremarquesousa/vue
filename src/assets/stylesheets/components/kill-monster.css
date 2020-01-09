@@ -1,0 +1,124 @@
+#general.kill-monster {
+    .line {
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        margin: 40px 0 0;
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        > div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &.scores {
+            display: flex;
+
+            > div {
+                flex: 1;
+            }
+
+            .bar {
+                width: 80%;
+                height: 20px;
+                border: solid 1px #ccc;
+
+                .life {
+                    background-color: green;
+                    display: block;
+                    height: 100%;
+                    transition: width 0.4s;
+                }
+
+                &.warning .life {
+                    background-color: orange;
+                }
+
+                &.danger .life {
+                    background-color: red;
+                }
+            }
+        }
+
+        &.message {
+            p {
+                font-size: 32px;
+                text-align: center;
+            }
+
+            .win {
+                color: green;
+            }
+
+            .lose {
+                color: red;
+            }
+        }
+
+        &.actions {
+            display: flex;
+            justify-content: center;
+
+            button {
+                color: #fff;
+                font-size: 18px;
+                height: 40px;
+                padding: 0 20px;
+                margin: 0 0 0 10px;
+                cursor: pointer;
+                border-radius: 5px;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+
+                &.init {
+                    background-color: blue;
+                }
+
+                &.attack {
+                    background-color: red;
+                }
+
+                &.special-attack {
+                    background-color: orange;
+                }
+
+                &.heal {
+                    background-color: green;
+                }
+
+                &.give-up {
+                    background-color: #ccc;
+                }
+            }
+        }
+        &.logs {
+            ul {
+                li {
+                    color: #fff;
+                    font-size: 18px;
+                    text-align: center;
+                    text-transform: uppercase;
+                    padding: 5px;
+                    margin: 5px 0 0;
+
+                    &:first-child {
+                        margin-top: 0;
+                    }
+
+                    &.player {
+                        background-color: #4253af90;
+                    }
+                    &.monster {
+                        background-color: #e51c2390;
+                    }
+                }
+            }
+        }
+    }
+}

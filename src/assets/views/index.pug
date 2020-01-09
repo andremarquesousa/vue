@@ -1,0 +1,65 @@
+doctype html
+html(lang="pt-br")
+  head
+    title Matador de monstro
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='description' content="meta desc")
+    meta(name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no')
+
+    //- Meta Tags for Social Media
+
+    meta(property='og:title' content="Base Project")
+    meta(property='og:description' content="Base Project")
+    meta(property='og:image' content="Base Project")
+    meta(property='og:url' content="Base Project")
+
+    meta(name='twitter:card' content="Base Project")
+    meta(name='twitter:site' content="Base Project")
+    meta(name='twitter:title' content="Base Project")
+    meta(name='twitter:image' content="Base Project")
+    meta(name='twitter:url' content="Base Project")
+
+    //- STYLESHEETS
+    link(rel="stylesheet" href="assets/stylesheets/style.css")
+
+  body
+    #general.kill-monster
+        div(class="line scores")
+            div
+                p Andre
+
+                div(class="bar" :class="{danger: playerLife < 20, warning: playerLife < 50}")
+                    div(class="life" :style="{width: playerLife + '%'}")
+
+                span {{playerLife}}%
+
+            div
+                p Monstro
+
+                div(class="bar" :class="{danger: monsterLife < 20, warning: monsterLife < 50}")
+                    div(class="life" :style="{width: monsterLife + '%'}")
+
+                span {{monsterLife}}%
+
+        div(class="line message" v-if="hasResult")
+            p(class="win" v-if="monsterLife == 0") Você ganhou =)
+            p(class="lose" v-else) Você perdeu =(
+
+        div(class="line actions")
+            template(v-if="init")
+                button(@click="attack(false)" class="attack" type="button") Ataque
+                button(@click="attack(true)" class="special-attack" type="button") Ataque Especial
+                button(@click="healingAndHurt" class="heal" type="button") Curar
+                button(@click="init = false" class="give-up" type="button") Desistir
+
+            button(@click="startGame" v-else class="init" type="button") Iniciar o jogo
+
+        div(v-if="logs.length" class="line logs")
+            ul
+                li(:class="log.cls" v-for="log in logs") {{ log.text }}
+
+    //- JAVASCRIPTS
+    script(src="https://cdn.jsdelivr.net/npm/vue")
+    script(src='assets/javascripts/main.js')
+  

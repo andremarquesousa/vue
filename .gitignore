@@ -1,0 +1,8 @@
+## NODE
+node_modules/
+
+## DIST
+dist/
+
+## package
+package-lock.json
